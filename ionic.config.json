@@ -1,0 +1,7 @@
+{
+  "name": "appformaa",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
