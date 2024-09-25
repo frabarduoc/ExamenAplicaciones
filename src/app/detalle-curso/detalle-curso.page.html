@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Detalle Curso </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Bienvenido</ion-card-title>
+    <ion-card-subtitle>Profesor</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+     Estos son los alumnos del curso 
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content>
+    Este son los alumnos del curso
+  </ion-card-content>
+</ion-card>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">detalleCurso</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+<ion-list>
+  <ion-item *ngFor = "let alumno of alumnos">
+    <ion-label>
+      <h5>Rut : {{alumno.rut}}</h5>
+      <h5>nombre :{{alumno.nombre}}</h5>
+      <h5>Estado : {{alumno.estado}}</h5>
+    </ion-label>
+  </ion-item>
+</ion-list>
