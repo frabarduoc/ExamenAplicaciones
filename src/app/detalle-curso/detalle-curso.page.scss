@@ -1,0 +1,55 @@
+/* Estilos generales para el contenido */
+ion-content {
+    --background: #eeeeee ; /* Fondo blanco para el contenido */
+  }
+  
+  /* Estilos para el encabezado */
+  ion-header {
+    --background: #FFB800; /* Fondo amarillo (#FFB800) */
+    --color: #FFFFFF; /* Texto en blanco (#FFFFFF) */
+  }
+  
+  ion-toolbar {
+    --background: #060270;
+    --color: #111010; /* Color del texto en blanco */
+  }
+  
+  ion-title {
+    color: #FFFFFF; /* Asegura que el título sea blanco */
+  }
+  
+  /* Estilos para los ion-cards */
+  ion-card {
+    --background: #FFFFFF; /* Fondo blanco */
+    --color: #666666; /* Texto gris oscuro (#666666) */
+  }
+  
+  ion-card-header {
+    --color: #666666; /* Color del texto en gris oscuro */
+  }
+  
+  ion-card-title {
+    color: #FFB800; /* Color amarillo para el título del card */
+  }
+  
+  ion-card-subtitle {
+    color: #666666; /* Subtítulo en gris oscuro */
+  }
+  
+  /* Estilos para los elementos de la lista */
+  ion-item {
+    --background: #FFFFFF; /* Fondo blanco para los items */
+  }
+  
+  ion-label h2 {
+    color: #FFB800; /* Amarillo para los títulos de la lista */
+  }
+  
+  ion-label h3 {
+    color: #666666; /* Gris oscuro para los subtítulos */
+  }
+  
+  ion-button {
+    --border-color: #FFB800; /* Borde amarillo */
+    --color: #FFB800; /* Texto y borde en amarillo */
+  }

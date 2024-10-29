@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { guardGuard} from './guard/guard.guard';
 const routes: Routes = [
   {
     path: 'home',
@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -31,6 +31,11 @@ const routes: Routes = [
     path: 'detalle-curso',
     loadChildren: () => import('./detalle-curso/detalle-curso.module').then( m => m.DetalleCursoPageModule)
   },
+  
+  {
+    path: '**',  // AL RECORRER LAS DEMAS PAGINAS, TOMA POR DEFECTO EL **.
+    loadChildren: () => import('./page404/page404.module').then( m => m.Page404PageModule)
+  }
 ];
 
 @NgModule({

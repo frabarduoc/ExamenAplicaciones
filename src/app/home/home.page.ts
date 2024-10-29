@@ -20,6 +20,18 @@ export class HomePage {
   ];
 
   constructor(private activeroute: ActivatedRoute, private router: Router) {
+  
+
+      this.activeroute.queryParams.subscribe(params => {       
+    
+        this.user = this.router.getCurrentNavigation()?.extras.state?.['id'];
+    
+        console.log(this.router.getCurrentNavigation()?.extras.state?.['user']);
+    
+       
+    
+      });
+    
     
   }
 
@@ -32,5 +44,7 @@ export class HomePage {
         seccion:seccion
       }
     };
+
+    this.router.navigate(['/detalle-curso'],setData);
   }
 }
