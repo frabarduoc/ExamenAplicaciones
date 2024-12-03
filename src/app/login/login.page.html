@@ -1,45 +1,31 @@
-<ion-header [translucent]="true">
-
+<ion-header>
   <ion-toolbar>
-   <ion-title>Bienvenido</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
- </ion-header>
- 
- 
- 
- <ion-content [fullscreen]="true" class="login-content">
-  <ion-item>
-   <!-- <ion-input label="Default input" [(ngModel)]="user.apellido"></ion-input> -->
-  </ion-item>
- 
-  <div class="background-container">
-  <div class="fullscren-container">
-   <img src="https://media.istockphoto.com/id/2043823329/es/foto/concepto-de-ciberseguridad-de-la-red-de-internet-protecci%C3%B3n-de-la-privacidad-de-los-datos.jpg?s=1024x1024&w=is&k=20&c=adBovRKD-Ozr2jjVl2GwIpEWsKXcLXaQ5kV--SnVhNE=" alt="Login Image" class="login-image">
+</ion-header>
+
+<ion-content>
+  <div class="login-wrapper">
+    <div class="login-box">
+      <div class="login-header">
+        <h2>Bienvenido</h2>
+        <p>Por favor, inicia sesión para continuar</p>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <ion-item class="custom-input">
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input formControlName="username"></ion-input>
+        </ion-item>
+
+        <ion-item class="custom-input">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" type="submit" [disabled]="loginForm.invalid">
+          Iniciar sesión
+        </ion-button>
+      </form>
+    </div>
   </div>
-  </div>
-
- 
- 
-  <form [formGroup]="usuario">
-   <ion-item>
-    <ion-input label="User" labelPlacement="floating" placeholder="User" formControlName="user"></ion-input>
-   </ion-item>
-
-   <ion-item>
-    <ion-input label="Pass" labelPlacement="floating" placeholder="Pass" formControlName="pass"></ion-input>
-   </ion-item>
-
-   <!-- <ion-button expand="block" color="success" [disabled]="!usuario.valid" [routerLink]="['/homaalumno']" fill="outline">Ingresar</ion-button> -->
-   <ion-button expand="block" color="success" (click)="navegarExtras()" fill="outline">Login</ion-button>
-   <!-- <ion-button expand="block" color="success" [routerLink]="['/home']" fill="outline">Nav RouiterLink</ion-button> -->
- 
-  </form>
-  <!-- <ion-card #card>
-   <ion-card-content>Card</ion-card-content>
-  </ion-card> 
- 
-  <ion-button (click)="play()">Play</ion-button> -->
- 
- </ion-content>
- 
- 
+</ion-content>

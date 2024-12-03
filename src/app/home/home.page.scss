@@ -1,55 +1,100 @@
-/* Estilos generales para el contenido */
 ion-content {
-  --background: #eeeeee ; /* Fondo blanco para el contenido */
+  --background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') 
+    no-repeat center center / cover;
 }
 
-/* Estilos para el encabezado */
 ion-header {
-  --background: #FFB800; /* Fondo amarillo (#FFB800) */
-  --color: #FFFFFF; /* Texto en blanco (#FFFFFF) */
+  --background: #003366; /* Azul oscuro */
 }
 
 ion-toolbar {
-  --background: #060270;
-  --color: #FFFFFF; /* Color del texto en blanco */
+  --background: #003366; /* Azul oscuro */
+  color: white;
 }
 
 ion-title {
-  color: #FFFFFF; /* Asegura que el título sea blanco */
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: white;
 }
 
-/* Estilos para los ion-cards */
+/* Centralizar todas las cards */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
 ion-card {
-  --background: #FFFFFF; /* Fondo blanco */
-  --color: #666666; /* Texto gris oscuro (#666666) */
+  width: 90%;  /* Controla el ancho de las cards */
+  max-width: 900px;  /* Tamaño máximo */
+  background: rgba(255, 255, 255, 0.8); /* Fondo blanco desvanecido */
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  padding: 20px;
 }
 
-ion-card-header {
-  --color: #666666; /* Color del texto en gris oscuro */
+/* Estilo de la card de bienvenida */
+.welcome-card {
+  background: #003366; /* Fondo azul oscuro */
+  color: white;
+  text-align: center;
 }
 
-ion-card-title {
-  color: #FFB800; /* Color amarillo para el título del card */
+.welcome-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-ion-card-subtitle {
-  color: #666666; /* Subtítulo en gris oscuro */
+.welcome-card p {
+  font-size: 16px;
+  color: white;
 }
 
-/* Estilos para los elementos de la lista */
-ion-item {
-  --background: #FFFFFF; /* Fondo blanco para los items */
+/* Card de curso */
+.curso-card {
+  width: 90%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco desvanecido */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: 20px auto; /* Centra las cards */
 }
 
-ion-label h2 {
-  color: #FFB800; /* Amarillo para los títulos de la lista */
+.curso-card-content {
+  display: flex;
+  justify-content: space-between; /* El botón y el contenido se alinean a los extremos */
+  align-items: center; /* Centraliza verticalmente */
 }
 
-ion-label h3 {
-  color: #666666; /* Gris oscuro para los subtítulos */
+ion-label {
+  width: 70%; /* El contenido del curso ocupará el 70% del espacio */
+  text-align: left; /* Alinear texto a la izquierda */
+  font-size: 18px;
+  color: #333;
+}
+
+ion-label h2, ion-label h3 {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #333;
 }
 
 ion-button {
-  --border-color: #FFB800; /* Borde amarillo */
-  --color: #FFB800; /* Texto y borde en amarillo */
+  --background: #003366; /* Azul oscuro */
+  font-weight: bold;
+  border-radius: 50px;
+  margin-left: 20px;
+}
+
+ion-button:hover {
+  opacity: 0.9;
 }

@@ -1,0 +1,61 @@
+.welcome-banner {
+    background-color: #003366; /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
+    text-align: center; /* Centra el texto */
+    padding: 15px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espacio debajo del banner */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  ion-content {
+    --background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ), 
+      url('https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') 
+      no-repeat center center / cover;
+  }
+  
+  .info-card {
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto; /* Centra la card */
+    width: 90%; /* Controla el ancho de la card */
+    max-width: 900px; /* Tamaño máximo */
+    text-align: center;
+    color: #003366; /* Texto en azul oscuro */
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre cards */
+    margin: 20px auto; /* Margen superior e inferior */
+    width: 90%; /* Controla el ancho de la contenedor de cards */
+    max-width: 900px; /* Tamaño máximo */
+  }
+  
+  ion-card {
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    border-radius: 15px;
+    padding: 20px;
+    width: 48%; /* Controla el ancho de cada card */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: #003366; /* Texto en azul oscuro */
+  }
+  
+  ion-card-title {
+    color: #003366 !important; /* Títulos en azul oscuro */
+    text-align: center; /* Centra el título */
+  }
+  
+  ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding */
+    margin: 0; /* Elimina el margin */
+  }
+  
+  li {
+    margin: 10px 0; /* Espacio entre las listas */
+  }
+  

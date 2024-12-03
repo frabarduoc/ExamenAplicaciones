@@ -1,50 +1,37 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'; 
-import { Router, NavigationExtras } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';  // Importar Router
+import { ConsumoapiService } from '../service/consumo-api.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  user: string = '';  // Inicializamos como cadena vacía para evitar posibles errores
+  cursos : any [] = [];
 
-  now = new Date();
-  user = "";
-  
-  //cursos
-  cursos = [
-    { id: 1, nombre: "clase 1", codigo: "codigo_01", seccion: "0001V" },
-    { id: 2, nombre: "clase 2", codigo: "codigo_02", seccion: "0002V" },
-    { id: 3, nombre: "clase 3", codigo: "codigo_03", seccion: "0003V" },
-  ];
+  constructor(private consumoapi: ConsumoapiService, private route: ActivatedRoute, private router: Router) {}  // Añadimos Router
 
-  constructor(private activeroute: ActivatedRoute, private router: Router) {
-  
-
-      this.activeroute.queryParams.subscribe(params => {       
-    
-        this.user = this.router.getCurrentNavigation()?.extras.state?.['id'];
-    
-        console.log(this.router.getCurrentNavigation()?.extras.state?.['user']);
-    
-       
-    
-      });
-    
-    
+  //metodo para consumir el servicio de la API
+  getPostServices() {
+    this.consumoapi.obtenerCursosPorProfesor(1).subscribe((respuesta) => {
+      this.cursos = respuesta;
+      console.log('Cursos cargados:', this.cursos); // Para debugging
+    });
   }
 
-  verDetalle(nombre:string,id: number, codigo:string, seccion:string) {
-    let setData:NavigationExtras = {
-      state: {
-        nombre:nombre,
-        id:id,
-        codigo:codigo,
-        seccion:seccion
-      }
-    };
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.user = params['user'] || 'Profesor';  // Verifica que esté recibiendo el parámetro correctamente
+    });
+    this.getPostServices();
+  }
 
-    this.router.navigate(['/detalle-curso'],setData);
+  verDetalle(nombre: string, id: number, codigo: string, seccion: string) {
+    // Redirigir a la página 'detalle-curso' pasando los parámetros
+    this.router.navigate(['/detalle-curso'], {
+      queryParams: { nombre, id, codigo, seccion }
+    });
   }
 }
