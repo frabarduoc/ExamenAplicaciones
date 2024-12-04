@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsumoapiService } from '../service/consumo-api.service';
 import { AlertController } from '@ionic/angular';
+//import QRCode from 'qrcode'; // Importa la biblioteca QRCode, NO FUNCIONA
+
 
 @Component({
   selector: 'app-detalle-curso',
@@ -15,6 +17,8 @@ export class DetalleCursoPage implements OnInit {
   codigo: string = '';      // Inicializa con cadena vacía
   seccion: string = '';     // Inicializa con cadena vacía
   alumnos: any [] = [];
+  //qrDataURL:string = ''; // NO FUNCIONA QR
+  
 
   constructor(
     private consumoapi: ConsumoapiService,
@@ -32,6 +36,7 @@ export class DetalleCursoPage implements OnInit {
       this.seccion = params['seccion'];
     });
     this.mostrarAlumno();
+    //this.generateQRCode(); // NO FUNCIONA
   }
 
   mostrarAlumno(){
@@ -43,13 +48,18 @@ export class DetalleCursoPage implements OnInit {
     });
   }
 
-  /*async mostrarPost(alumno: any) {
-    const alert = await this.alertController.create({
-      header: 'Post de ' + alumno.nombre,
-      message: alumno.post ? alumno.post : 'No hay post disponible',
-      buttons: ['OK']
-    });
 
-    await alert.present();
-  }*/
+  /*generateQRCode(){
+    if (this.id) {
+      const fechaActual = new Date().toISOString().split('T')[0];
+      const data = `${this.codigo}-${this.seccion}-${fechaActual}`;
+
+      let qr = QRCode(4, 'L');
+      qr.addData(data);
+      qr.make();
+      this.qrDataURL= qr.createDataURL(4);
+    }
+  }*/ //FUNCION PARA GENERAR QR NO FUNCIONA 
+ 
+  
 }
